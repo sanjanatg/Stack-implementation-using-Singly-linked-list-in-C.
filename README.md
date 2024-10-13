@@ -13,11 +13,12 @@ Key Features:
 Input:
 
 The program will prompt you to enter the maximum size of the stack.
-You'll then be presented with a menu to choose from the following operations:
-1: Push an element onto the stack
-2: Pop an element from the stack
-3: Display the stack and exit
+You'll then be presented with a menu to choose from the following operations:<br>
+1: Push an element onto the stack<br>
+2: Pop an element from the stack<br>
+3: Display the stack and exit<br>
+
 Output:
 
-The program will display appropriate messages for stack overflow, underflow, and successful operations.
+The program will display appropriate messages for stack overflow, underflow, and successful operations.<br>
 It will also print the elements of the stack when you choose to display them.
