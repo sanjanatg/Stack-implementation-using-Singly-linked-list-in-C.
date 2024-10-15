@@ -53,7 +53,7 @@ void display(NODE *first)
         printf("%d,\t",temp->info);
         temp=temp->link;
     }
-    printf("\nEND OF LIST");
+    printf("\n------------------------------------------------\n");
 }
 
 int main() 
@@ -61,13 +61,13 @@ int main()
     NODE *first = NULL;  // Correct initialization to pointer
     int c,size;
     printf("THIS PROGRAM IS TO IMPLEMENT STACKS USING SLL\n");
-    printf("STACK OPERATIONS ARE INSERTION AND DELETION\n");
+    printf("STACK OPERATIONS ARE INSERTION (push) AND DELETION (pop)\n");
     printf("enter size of stack \n");
     scanf("%d",&size);
     while(1)
     {
       
-        printf("\nEnter\n1=push onto a stack\n2=pop an element\n3=dispaly the stack and exit\n");
+        printf("\nEnter\n1=push onto a stack\n2=pop an element\n3=dispaly the stack\n4=exit\n");
         scanf("%d", &c);
         switch (c) {
           case 1: {
@@ -83,8 +83,26 @@ int main()
              }
              else
              {
-                 printf("\n stack overflow\n pop out an element\n");
-                 break;
+                 printf("\n stack overflow\n");
+                printf("Enter 'y' to increase the size if the stack by 1, or enter 'n' to continue\n");
+                char a;
+                getchar();
+                scanf("%c", &a);
+                if (a == 'y')
+                {
+                    size++;
+                    count--;
+                }
+                else if (a == 'n')
+                {
+                    break;
+                }
+                else
+                {
+                    printf("OOPS! wrong choice ----- CONTINUE\n");
+                }
+
+                break;
              }
           }
           case 2:
@@ -102,15 +120,19 @@ int main()
             }
            }
            case 3:
-           {
+        {
             printf("\nPRINTING THE STACK {in the order = topmost element to the bottommost element} \n");
             display(first);
+            break;
+        }
+        case 4:
+        {
             exit(0);
-           }
-          default:
+        }
+        default:
             printf("\nWRONG CHOICE\n");
             exit(0);
-    }
-    }
+    }//closing switch
+    }//closing while
     return 0;
 }
