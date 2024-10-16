@@ -107,10 +107,9 @@ int main()
           }
           case 2:
            {
-            count--;
-
             if(count>=0)
             {
+                count--;
               first = Deletefront(first);
               break;
             }
